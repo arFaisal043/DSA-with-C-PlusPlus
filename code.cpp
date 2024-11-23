@@ -3,6 +3,8 @@ using namespace std;
 
 int main() {
 
+    cout << "hello";
+
 // Variable , Data Type and Operators .....
 
     // int a = 10;

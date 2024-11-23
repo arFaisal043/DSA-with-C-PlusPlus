@@ -15,7 +15,7 @@ int main() {
 
 // <<-------------------- CONDITIONAL STATEMENT --------------------->>
 
-// Find character lowercase or uppercase:-
+// Find character lowercase or uppercase:
     // char ch;
     // cout << "enter character: ";
     // cin >> ch;
