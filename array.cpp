@@ -171,4 +171,32 @@ int main() {
 
 
 
+
+
+prob: Consider an array AUTO which records the number of automobiles
+      sold each year from 1982 to 2020. Find the number NUM of years
+      during which more than 300 automobiles were sold.
+
+
+int main() {
+
+    int NUM = 0;
+    int AUTO[39] = {
+        250, 310, 290, 305, 320, 295, 310, 300, 335, 290, 315, 340, 320, 330, 360, 310, 300, 275, 295, 310, 
+        335, 325, 290, 305, 320, 315, 310, 330, 340, 350, 360, 370, 380, 290, 310, 315, 320, 330, 300
+    };
+
+    for (int i = 0; i < 39; i++) {
+        if (AUTO[i] > 300) {
+            NUM++;
+        }
+    }
+
+    cout << "Number of years with more than 300 automobiles sold: " << NUM << endl;
+
+    return 0;
+}
+
+
+
 */
