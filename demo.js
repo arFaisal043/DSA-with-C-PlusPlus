@@ -1,11 +1,28 @@
-let arr = [7 , 8 , 12 , 27 , 88];
-let targetIndex = 2 , targetVal = 9;
+const readline = require('readline');
 
-for(let i = arr.length ; i >= targetIndex ; i--) {
-    arr[i + 1] = arr[i];
-}
-arr[targetIndex] = targetVal;
+// Create interface for input and output
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
 
-for(let i = 0 ; i < arr.length ; i++) {
-    console.log(arr[i]);
-}
+rl.question('Enter the size of the array: ', (size) => {
+    size = parseInt(size);
+    let arr = new Array(size);
+    let index = 0;
+
+    const readArrayElements = () => {
+        if (index < size) {
+            rl.question(`Enter element ${index + 1}: `, (element) => {
+                arr[index] = parseInt(element);
+                index++;
+                readArrayElements();
+            });
+        } else {
+            console.log('Array elements are: ', arr);
+            rl.close();
+        }
+    };
+
+    readArrayElements();
+});
