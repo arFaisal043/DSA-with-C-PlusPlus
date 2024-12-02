@@ -1,5 +1,3 @@
-// liner-serch.cpp
-
 #include<iostream>
 using namespace std;
 

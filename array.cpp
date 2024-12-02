@@ -1,16 +1,23 @@
 #include<iostream>
 using namespace std;
 
-
-
 int main() {
 
-    
+    int size = 4 , start = 0 , end = size - 1;
+    int arr[] = {1 , 2  , 3 , 4};
+
+    while(start < end) {
+        swap(arr[start] , arr[end]);
+        start++;
+        end--;
+    }
+
+    for(int i = 0 ; i < size ; i++) {
+        cout << arr[i];
+    }
 
     return 0;
 }
-
-
 
 
 
@@ -20,7 +27,7 @@ int main() {
  int marks[] = {100 , 90 , 80 , 33 , 40};
 
 
-Lopps on array:
+Loops on array:
 
 int main() {
 
@@ -43,7 +50,7 @@ int main() {
 
 
 
-Prob: Find Max and Min Value on array using LOOPs
+Prob 1: Find Max and Min Value on array using LOOPs
 
 int main() {
 
@@ -143,7 +150,7 @@ int main() {
 
 
 
-prob: Sum 2nd abd 4th index of an array.
+prob 2: Sum 2nd and 4th index of an array.
 
 int main() {
     int n , sum = 0;
@@ -173,7 +180,7 @@ int main() {
 
 
 
-prob: Consider an array AUTO which records the number of automobiles
+prob 3: Consider an array AUTO which records the number of automobiles
       sold each year from 1982 to 2020. Find the number NUM of years
       during which more than 300 automobiles were sold.
 
@@ -181,7 +188,7 @@ prob: Consider an array AUTO which records the number of automobiles
 int main() {
 
     int NUM = 0;
-    int AUTO[39] = {
+    int AUTO[39] = {   --> (2020 - 1982 = 39)
         250, 310, 290, 305, 320, 295, 310, 300, 335, 290, 315, 340, 320, 330, 360, 310, 300, 275, 295, 310, 
         335, 325, 290, 305, 320, 315, 310, 330, 340, 350, 360, 370, 380, 290, 310, 315, 320, 330, 300
     };
@@ -197,6 +204,27 @@ int main() {
     return 0;
 }
 
+
+
+prob 4: Reverse an array-
+
+int main() {
+
+    int size = 4 , start = 0 , end = size - 1;
+    int arr[] = {1 , 2  , 3 , 4};
+
+    while(start < end) {
+        swap(arr[start] , arr[end]);
+        start++;
+        end--;
+    }
+
+    for(int i = 0 ; i < size ; i++) {
+        cout << arr[i];
+    }
+
+    return 0;
+}
 
 
 */

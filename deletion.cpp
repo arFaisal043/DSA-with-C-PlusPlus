@@ -24,3 +24,26 @@ int main() {
 
     return 0;
 }
+
+
+/*
+
+//-- Delete Multiple elements-
+
+int main() {
+    int size = 5 , targetIndex_1 = 1 , targetIndex = 2;
+    int arr[10] = {1 , 2 , 3 , 4 , 5};
+
+    for(int i = targetIndex_1 ; i <= size ; i++) {
+
+        arr[i - 2] = arr[i];
+    }
+    size -= 2;
+
+    for(int i = 0 ; i < size ; i++) {
+
+        cout << arr[i] << " ";
+    }
+}
+
+ */
