@@ -193,11 +193,6 @@ void insertion(int arr[] , int capacity , int size , int targetIndex , int targe
     arr[targetIndex] = targetVal;
 }
 
-// Deletion value at last index:
-
-
-
-
 
 int main() {
     int size , capacity , targetIndex , targetVal;

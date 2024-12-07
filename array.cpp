@@ -213,8 +213,12 @@ int main() {
     int size = 4 , start = 0 , end = size - 1;
     int arr[] = {1 , 2  , 3 , 4};
 
-    while(start < end) {
-        swap(arr[start] , arr[end]);
+    while(start <= end) {
+        //swap(arr[start] , arr[end]);  
+
+        int temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
         start++;
         end--;
     }
@@ -225,6 +229,29 @@ int main() {
 
     return 0;
 }
+
+
+
+Prob5 : Write a function to print unique value in an array.
+
+int singleNumber(int nums[] , int size) {
+        int ans = 0;
+        for(int i = 0 ; i < size ; i++) {
+            ans ^= i;
+        }
+
+        return ans;
+}
+
+int main() {
+    int size = 5;
+    int nums[] = {4 , 1 , 2 , 1 ,2};
+    cout << singleNumber(nums , size);
+    
+    return 0;
+}
+
+
 
 
 */
