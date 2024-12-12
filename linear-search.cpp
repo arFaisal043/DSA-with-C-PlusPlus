@@ -5,27 +5,24 @@
 
 prob1: Find min / max Number. 
 
-int linearSearch(int arr[] , int size , int targetVal) {
-
-    for(int i = 0 ; i < size ; i++) {
-        if(arr[i] == targetVal) {
-            return i;
-        }
-    }
-    return -1; // not found
-}
 
 int main() {
 
     int arr[] = { 8 , 9 , 4 , 99 , 24 , 12};
-    int size = 5;
-    int targetVal = 99;
+    int size = 6;
+    int minVal = INT_MAX;
 
-    cout << linearSearch(arr , size , targetVal);
+    for(int i = 0 ; i < size ; i++) {
+
+        if(arr[i] < minVal) {
+            minVal = arr[i];
+            continue;
+        }
+    }
+    cout << "Min Value: " << minVal << endl;
 
     return 0;
 }
-
 
 
 
