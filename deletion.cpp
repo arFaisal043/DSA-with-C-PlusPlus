@@ -31,7 +31,7 @@ int main() {
 //-- Delete Multiple elements-
 
 int main() {
-    int size = 5 , targetIndex_1 = 1 , targetIndex = 2;
+    int size = 5 , targetIndex_1 = 1 , targetIndex_2 = 2;
     int arr[10] = {1 , 2 , 3 , 4 , 5};
 
     for(int i = targetIndex_1 ; i <= size ; i++) {

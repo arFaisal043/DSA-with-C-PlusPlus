@@ -1,0 +1,15 @@
+<--- Array + Vector --->
+
+1. Find Max and Min Value on array using LOOPs.
+2. Find index number of the target elm.
+3. Sum 2nd and 4th index of an array.
+4. Reverse an array.
+5. Find unique value in an array.
+6. Print all Sub Array.
+7. Find Maximum sub array sum. (Brute force, Kadane,s Algo)
+8. Find pair sum of an array. (Brute force, Two Pointer Approach)
+
+
+<--- Linear Search --->
+1. Find min / max Number.
+2. Find index number of the target elm.

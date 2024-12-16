@@ -6,7 +6,7 @@ int main() {
     int size = 4 , start = 0 , end = size - 1;
     int arr[] = {1 , 2  , 3 , 4};
 
-    while(start < end) {
+    while(start <= end) {
         swap(arr[start] , arr[end]);
         start++;
         end--;
@@ -167,7 +167,7 @@ int main() {
     }
 
     for(int i = 0 ; i < n ; i++) {
-        if(arr[i] == 2 | arr[i] == 4) {
+        if(i == 2 | i == 4) {
             sum += arr[i];
         }
     }

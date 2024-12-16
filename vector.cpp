@@ -109,4 +109,135 @@ int main() {
     cout << "Max sum is: " << maxSum;
 }
 
+
+
+
+
+prob 3: find pair sum of an array
+
+
+<--- Using Brute Force --->
+
+vector<int> pairSum(vector<int> arr , int target) {
+    vector<int> ans;
+    int n = arr.size();
+
+    for(int i = 0; i < n ; i++) {
+        for(int j = i + 1 ; j < n ; j++) {
+            if(arr[i] + arr[j] == target) {
+                ans.push_back(i);
+                ans.push_back(j);
+                return ans;   //  ans has only two elm(i , j)
+            }
+        }
+    }
+    return ans;
+}
+
+int main() {
+    vector<int> arr = {2 , 7 , 11 , 15};
+    int target = 17;
+    vector<int> ans = pairSum(arr , target);
+    cout << ans[0] << " , " << ans[1];
+
+    return 0;
+}
+
+
+
+<--- Using Two Pointer Approach --->
+
+vector<int> pairOfSum(vector<int> arr , int target) {
+    vector<int> ans;
+    int n = arr.size();
+
+    int st = 0 , end = n - 1;
+    while(st < end) {
+        int pairSum = arr[st] + arr[end];
+
+        if(pairSum > target) {
+            end--;
+        }
+        else if(pairSum < target) {
+            st++;
+        }
+        else {
+            ans.push_back(st);
+            ans.push_back(end);
+            return ans;
+        }
+    }
+    return ans;
+}
+
+int main() {
+    vector<int> arr = {2 , 7 , 11 , 15};
+    int target = 26;
+    vector<int> ans = pairOfSum(arr , target);
+    cout << ans[0] << " , " << ans[1];
+
+    return 0;
+}
+
+
+
+
+
+prob 4: Find majority element. 
+
+--- using Brute force ---
+int majorityElm(vector<int> arr) {
+    int n = arr.size();
+
+    for(int val : arr) {
+        int freq = 0;
+
+        for(int elm : arr) {
+            if(elm == val) {
+                freq++;
+            }
+        }
+        if(freq > n / 2) {
+            return val;
+        }
+    }
+    return -1;
+}
+
+int main() {
+    vector<int> arr = {1 , 2 , 2 , 1 , 2 , 1 , 1};
+    int ans =  majorityElm(arr);
+    cout << ans;
+
+    return 0;
+}
+
+
+
+
+-- Optimize Code --
+
+int majorityElm(vector<int> arr) {
+    int n = arr.size();
+
+    // sort
+    sort(arr.begin(), arr.end());
+    int freq = 1 , ans = arr[0];
+
+    for(int i = 1 ; i < n ; i++) {
+        if(arr[i] == arr[i - 1]) {
+            freq++;
+        }
+        else {
+            freq = 1;
+            ans = arr[i];
+        }
+
+        if(freq > n/2) {
+            return ans;
+        }
+    }
+    return ans;
+}
+
 */

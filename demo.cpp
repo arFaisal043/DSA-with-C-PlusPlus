@@ -1,19 +1,35 @@
-#include <iostream>
-#include <vector>
-#include <climits>
+#include<iostream>
+#include<vector>
+#include <algorithm>
 using namespace std;
 
-int main() {
-    vector<int> arr = {3 , -4 , 5 , 4 , -1 , 7 , -8};
-    int currSum = 0 , maxSum = INT_MIN;
+int majorityElm(vector<int> arr) {
+    int n = arr.size();
 
-    for(int i : arr) {
-        currSum += i;
-        maxSum = max(currSum , maxSum);
+    // sort
+    sort(arr.begin(), arr.end());
+    int freq = 1 , ans = arr[0];
 
-        if(currSum < 0) {
-            currSum = 0;
+    for(int i = 1 ; i < n ; i++) {
+        if(arr[i] == arr[i - 1]) {
+            freq++;
+        }
+        else {
+            freq = 1;
+            ans = arr[i];
+        }
+
+        if(freq > n/2) {
+            return ans;
         }
     }
-    cout << maxSum;
+    return ans;
+}
+
+int main() {
+    vector<int> arr = {1 , 2 , 2 , 3 , 3 , 3 , 3};
+    int ans =  majorityElm(arr);
+    cout << ans;
+
+    return 0;
 }
