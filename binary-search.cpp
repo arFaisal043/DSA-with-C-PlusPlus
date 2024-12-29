@@ -43,11 +43,12 @@ int binarySearch(int arr[] , int n , int target) {
 
 int main() {
 
-    int n = 5 , target = 5;
-    int arr[] = {1 ,2 ,3 ,4 ,5};
+    int n = 6 , target = 3;
+    int arr[] = {1 ,3 ,5 ,4 ,2, 6};
 
-    //sorting(arr , n);
-    //display(arr , n);
+    display(arr , n);
+    sorting(arr , n);
+    display(arr , n);
     int res = binarySearch(arr , n , target);
     cout << "result = " << res;
 

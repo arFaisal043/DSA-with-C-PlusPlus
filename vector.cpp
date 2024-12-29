@@ -78,12 +78,12 @@ prob2: Find Maximum sub array sum.
 int main() {
     int size = 5 , maxSum = INT_MIN;
     int arr[] = {1 , 2 , 3 , 4 , 5};
-    //int sum = 0;
+    //int currSum = 0;
     for(int st = 0; st < size; st++) {
-        int  sum = 0;
+        int  currSum = 0;
         for(int end = st; end < size; end++) {
             sum += arr[end];
-            maxSum = max(sum , maxSum);
+            maxSum = max(currSum , maxSum);
         }
     }
     cout << "Maximum is: " << maxSum;
@@ -239,5 +239,8 @@ int majorityElm(vector<int> arr) {
     }
     return ans;
 }
+
+
+-- Moores Voting Algo --
 
 */

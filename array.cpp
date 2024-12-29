@@ -252,6 +252,50 @@ int main() {
 }
 
 
+prob6: Print 2nd largest element
 
+
+int main() {
+    vector<int> arr = {3 , 2 , 5 , 1 , 4 , 5};
+    int n = arr.size();
+    sort(arr.begin() , arr.end()); // 1 2 3 4 5 5
+    int largest = arr[n - 1]; // 5
+
+    for(int i = n - 2; i > 0; i--) {
+        if(arr[i] != largest) {
+            int SecLargest = arr[i];
+            cout << SecLargest;
+            break;
+        }
+    }
+    return 0;
+}
+
+
+Prob7 : Find 2nd largest elm without sorting
+
+
+int main() {
+    vector<int> arr = {3 , 2 , 5 , 1 , 4 , 5 , 55};
+    int n = arr.size();
+
+    int largest = INT_MIN;
+    for(int i = 0; i < n; i++) {
+        if(arr[i] > largest) {
+            largest = arr[i];
+        }
+    }
+    cout << "largest: " << largest << endl;
+
+    int secLargest = INT_MIN;
+    for(int i = 0; i < n; i++) {
+        if(arr[i] > secLargest && arr[i] < largest) {
+            secLargest = arr[i];
+        }
+    }
+    cout << "2nd largest: " << secLargest;
+
+    return 0;
+}
 
 */

@@ -148,7 +148,7 @@ int main() {
 // }
 
 
-// prob 3: Sum of all number from 1 to n which are divisible by 3.
+// prob 4: Sum of all number from 1 to n which are divisible by 3.
 
 // int main() {
 
@@ -167,7 +167,7 @@ int main() {
 // }
 
 
-// prob 4: print factorial Number.
+// prob 5: print factorial Number.
 
 
 
@@ -197,7 +197,48 @@ int main() {
 }
 
 
-Prob2: 
+Prob 6: print
+
+1
+12
+123
+1234
+12345
+
+    int n = 5;
+    for(int i = 1; i <= n; i++) {
+        
+        for(int j = 1; j <= i; j++) {
+            cout << j;
+        }
+        cout << endl;
+    }
+
+
+
+
+Prob 7: 
+
+ 5 4 3 2 1
+ 5 4 3 2
+ 5 4 3
+ 5 4
+ 5
+
+
+    int n = 5;
+    for(int r = 1; r <= n; r++) {
+        cout << endl;
+        for(int c = n; c >= r; c--) {
+            cout << " " << c;
+        }
+    }
+
+
+
+
+Prob8: 
+
 ABCD
 ABCD
 ABCD
@@ -219,7 +260,7 @@ int main() {
 }
 
 
-prob3:
+prob9:
 1 2 3
 4 5 6
 7 8 9
@@ -239,7 +280,8 @@ int main() {
     return 0;
 }
 
-prob4:
+prob10 : 
+
 A
 AB
 ABC
@@ -257,6 +299,16 @@ int main() {
     }
     return 0;
 }
+
+
+prob11: print sum from 1 to n;
+
+let n = 5 , sum = 0;
+
+for(let i = 0; i < n; i++) {
+    sum = n * (n + 1) / 2;
+}
+console.log(sum);
 
 
 */
