@@ -243,4 +243,23 @@ int majorityElm(vector<int> arr) {
 
 -- Moores Voting Algo --
 
+int main() {
+    int arr[] = {1 , 2 , 2 , 1 , 2 , 1 , 1};
+    int n = 7;
+    int cnt = 0 , ans = 0;
+
+    for(int i = 0; i < n; i++) {
+        if(cnt == 0) {
+            ans = arr[i];
+        }
+        if(ans == arr[i]) {
+            cnt++;
+        }
+        else {
+            cnt--;
+        }
+    }
+    cout << ans;
+}
+
 */
