@@ -11,7 +11,8 @@ void insertionSort(int arr[], int size) {
         while(prev >= 0 && arr[prev] > curr) { 
             arr[prev + 1] = arr[prev]; // Move the element one position to the right 
             prev--; 
-        } arr[prev + 1] = curr; // Insert the current element into its correct position 
+        } 
+        arr[prev + 1] = curr; // Insert the current element into its correct position 
     }
 }
 

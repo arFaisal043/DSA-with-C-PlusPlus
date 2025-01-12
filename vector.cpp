@@ -262,4 +262,73 @@ int main() {
     cout << ans;
 }
 
+
+
+
+
+Prob5: Moves zero at the end 
+
+
+-- Brute Force --
+
+void moveZero(vector<int>& nums) {
+    <-- The & symbol in the void moveZeros(vector<int>& arr) function indicates that the parameter arr is being passed by reference, not by value. This means that the function operates directly on the original vector<int> passed to it, rather than working on a copy.-->
+
+    vector<int> result; // Declared a temp array
+    
+    // Add non-zero elements to the result array
+    for (int val : nums) {
+        if (val != 0) {
+            result.push_back(val);
+        }
+    }
+    
+    // Fill the remaining positions with zeroes
+    while (result.size() <= nums.size()) {
+        result.push_back(0);
+    }
+    
+    // Copy the result back to the original array
+    for (int i = 0; i < nums.size(); ++i) {
+        nums[i] = result[i];
+    }
+}
+
+
+
+
+-- Two Pointer Approach --
+
+
+void moveZeros(vector<int>& arr) {
+    
+    int j = -1;
+
+    for(int i = 0; i < arr.size(); i++) {
+        if(arr[i] == 0) {
+            j = i;
+            break;
+        }
+    }
+
+    for(int i = j + 1; i < arr.size(); i++) {
+        if(arr[i] != 0) {
+            swap(arr[i] , arr[j]);
+            j++;
+        }
+    }
+}
+
+
+
+int main() {
+    vector<int> nums = {0, 1, 0, 3, 12};
+    moveZero(nums);
+
+    for (int num : nums) {
+        cout << num << " ";
+    }
+}
+
+
 */
