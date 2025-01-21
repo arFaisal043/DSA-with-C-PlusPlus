@@ -124,7 +124,7 @@ void addBook() {
 
     // push recently added stack
     if (top + 1 < MAX_BOOKS) {
-        recentlyAddedBooks[++top] = books[bookCount];
+        recentlyAddedBooks[++top] = books[bookCount]; 
     }
 
     bookCount++;
@@ -217,20 +217,23 @@ void borrowBook(int userIndex) {
     printf("Book not found or not available.\n");
 }
 
-void returnBook(int userIndex) {
+void returnBook(int userIndex) {  // indicates the index of the user's array, which tells which user's information will be used
     char title[MAX_LENGTH];
 
     printf("Enter the title of the book to return: ");
     scanf(" %[^\n]s", title);
 
-    for (int i = 0; i < users[userIndex].borrowedCount; i++) {
-        if (strcmp(users[userIndex].borrowedBooks[i], title) == 0) {
+    // ধার করা বইয়ের তালিকায় বই খোঁজা
+    for (int i = 0; i < users[userIndex].borrowedCount; i++) {  // এটি ব্যবহারকারীর ধার করা বইগুলোর তালিকা (users[userIndex].borrowedBooks) 
+        if (strcmp(users[userIndex].borrowedBooks[i], title) == 0) { // users[userIndex].borrowedBooks[i] (ব্যবহারকারীর ধার করা বইয়ের তালিকা থেকে একটি বই) এবং ইনপুট দেওয়া title তুলনা করা হয়।
+            
             for (int j = 0; j < bookCount; j++) {
                 if (strcmp(books[j].title, title) == 0) {
                     books[j].isAvailable = 1;
                     break;
                 }
             }
+            // ধার করা বইয়ের তালিকা থেকে বই সরানো
             for (int j = i; j < users[userIndex].borrowedCount - 1; j++) {
                 strcpy(users[userIndex].borrowedBooks[j], users[userIndex].borrowedBooks[j + 1]);  // After remove books, the rest of the books are moved to the left.
             }
