@@ -31,7 +31,7 @@ int top = -1; // we will use multiple time the top .That's why we declared top a
 void display() {
     int i;
     if(top == -1) {
-        cout << "Stack overflow";
+        cout << "Stack Underflow";
         return;
     }
     for(i = top; i >= 0; i--) {

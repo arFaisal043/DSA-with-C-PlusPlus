@@ -10,7 +10,7 @@ void insertionSort(int arr[], int size) {
         //Shift elements of the sorted segment that are greater than curr 
         while(prev >= 0 && arr[prev] > curr) { 
             arr[prev + 1] = arr[prev]; // Move the element one position to the right 
-            prev--; 
+            prev--; // Backward loop
         } 
         arr[prev + 1] = curr; // Insert the current element into its correct position 
     }
