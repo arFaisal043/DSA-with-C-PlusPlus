@@ -12,6 +12,10 @@
 10. Find majority element. (Brute force , Optimize , Moore,s Algo)
 11. Move Zeros at the end. (Brute force , Optimize)
 12. Merge 2 sorted array.
+13. Rotate Array
+14. Best Buy and sell and find max profit.
+15. Container with the most water.
+16. Product of array except itself.
 
 
 <--- Linear Search --->
@@ -20,5 +24,9 @@
 3. Find index number of the target elm.
 
 <--- Binary Search --->
+1. Rotated sorted array.
+2. Search insert position
+3. Peak index in a mountain array(max elm)
+4. Single element in a sorted array --> O(Log n)
 
 <--- Sorting Algorithm --->

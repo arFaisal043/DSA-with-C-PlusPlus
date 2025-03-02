@@ -233,7 +233,7 @@ void returnBook(int userIndex) {  // indicates the index of the user's array, wh
                     break;
                 }
             }
-            // ধার করা বইয়ের তালিকা থেকে বই সরানো
+            // ধার করা বইয়ের তালিকা থেকে বই সরানো 
             for (int j = i; j < users[userIndex].borrowedCount - 1; j++) {
                 strcpy(users[userIndex].borrowedBooks[j], users[userIndex].borrowedBooks[j + 1]);  // After remove books, the rest of the books are moved to the left.
             }

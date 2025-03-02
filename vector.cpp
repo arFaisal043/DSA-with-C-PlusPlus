@@ -371,4 +371,141 @@ int main() {
     return 0;
 }
 
+
+
+
+prob 7: Best buy and sell and find max profit.
+
+int maxProfit(vector<int>& price) {
+    int maxProfit = 0, bestBuy = price[0], n = price.size();
+
+    for(int i = 1; i < n; i++) {
+        if(price[i] > bestBuy) {
+            maxProfit = max(maxProfit , price[i] - bestBuy);
+        }
+        bestBuy = min(bestBuy , price[i]);
+    }
+
+    return maxProfit;
+}
+
+int main() {
+    vector<int> price = {7 , 1 , 5 , 3 , 6 , 4};
+    cout << maxProfit(price);
+
+    return 0;
+}
+
+
+prob 7: Container with the most water.
+
+Brute force approach: 
+
+int maxArea(vector<int>& arr , int n) {
+    
+    int maxArea = 0;
+
+    for(int i = 0; i < n; i++) {
+        for(int j = i + 1; j < n; j++) {
+            int height = min(arr[i] , arr[j]);
+            int width = j - i;
+            int area = height * width;
+            maxArea = max(maxArea , area);
+        }
+    }
+    return maxArea;
+}
+
+
+Two Pointer (Optimal solution)   
+
+int maxArea(vector<int>& arr , int n) {
+    
+    int maxArea = 0;
+    int st = 0, end = n - 1;
+
+    while(st < end) {
+        int w = end - st;
+        int h = min(arr[st] , arr[end]);
+        int area = w * h;
+        maxArea = max(maxArea , area);
+
+        arr[st] < arr[end] ? st++ : end--;
+    }
+
+    return maxArea;
+}
+
+
+
+
+prob 8: Product of array except itself
+
+vector<int> temp;
+
+void newArr(vector<int>& arr , int n) {
+    int mul = 1;
+
+    for(int i : arr) {
+        mul *= i; // mul = 24
+    }
+    
+    for(int i : arr) {
+        int newElm = mul / i;
+        temp.push_back(newElm);
+    }
+    
+}
+
+
+
+
+prob 9: Rotated sorted array --> O(logn)
+
+
+sol: 
+int search(vector<int>& nums, int target) {
+
+        int st = 0, end = nums.size() - 1;
+
+        while(st <= end) {
+            int mid = st + (end - st) / 2;
+
+            if(nums[mid] == target) {
+                return mid;
+            }
+
+            if(nums[st] <= nums[mid]) { // Left side sorted
+
+                if(nums[st] <= target && target <= nums[mid]) {
+                    end = mid - 1;
+                }
+                else {
+                    st = mid + 1;
+                }
+            }
+            else { // Right side sorted
+
+                if(nums[mid] <= target && target <= nums[end]) {
+                    st = mid + 1;
+                }
+                else {
+                    end = mid - 1;
+                }
+            }
+        }
+
+        return -1;
+        
+    }
+
+
+
+
+
+
+
+
+
+
 */

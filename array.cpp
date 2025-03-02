@@ -262,7 +262,7 @@ int main() {
     int largest = arr[n - 1]; // 5
 
     for(int i = n - 2; i > 0; i--) {
-        if(arr[i] != largest) {
+        if(arr[i] != largest) { // If not is equal largest
             int SecLargest = arr[i];
             cout << SecLargest;
             break;

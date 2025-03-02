@@ -1,60 +1,44 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include<iostream>
+#include<vector>
+#include<algorithm>
 using namespace std;
 
-void bubbleSort(int arr[] , int n) {
+int binarySearch(int arr[], int n) {
+    int targetval = 9;
+    int st = 0, end = n - 1;
 
-    for(int i = 0; i < n - 1; i++) {
-        for(int j = 0; j < n - i - 1; j++) {
-            if(arr[j] > arr[j + 1]) {
-                int temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-            }
+    while(st <= end) {
+        int mid = st + (end - st) / 2;
+
+        if(targetval > arr[mid]) {
+            st = mid + 1;
+        }
+        else if(targetval < arr[mid]) {
+            end = mid - 1;
+        }
+        else {
+            return mid;
         }
     }
-}
-
-void selectionSort(int arr[] , int n) {
-    for(int i = 0; i < n - 1; i++) {
-        int smallestIdx = i;
-        for(int j = i + 1; j < n; j++) {
-            if(arr[j] < arr[smallestIdx]) {
-                smallestIdx = j;
-            }
-        }
-
-        swap(arr[i] , arr[smallestIdx]);
-    }
-}
-
-void insertionSort(int arr[] , int n) {
-
-    for(int i = 1; i < n; i++) {
-        int curr = arr[i];
-        int prev = i - 1;
-
-        while (prev >= 0 && arr[prev] > curr) {
-            arr[prev + 1] = arr[prev];
-            prev--;
-        }
-        arr[prev + 1] = curr;
-        
-    }
+    return -1;
 }
 
 int main() {
 
-    int arr[] = {333 , 212 , 100 , 5 , 420};
-    int n = 5;
+    int arr[] = {};
+    int n = 7;
+    
+    int res = binarySearch(arr, n);
 
-    //bubbleSort(arr , n);
-    //selectionSort(arr , n);
-    insertionSort(arr , n);
-
-    for(int i = 0; i < n; i++) {
-        cout << arr[i] << " ";
+    if(res != -1) {
+        cout << "Target value is at index no: " << res << endl;
     }
+    else {
+        cout << "Not found" << endl;
+    }
+    
     return 0;
 }
+
+
+
