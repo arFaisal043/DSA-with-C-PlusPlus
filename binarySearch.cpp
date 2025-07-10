@@ -205,5 +205,33 @@ int singleNonDuplicate(vector<int>& arr) {
     }
 
 
+Prob5:  sqrt(x)
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    int x = 9, length = 10, st = 0, end = length - 1;
+    int res = -1;
+
+    while (st <= end){
+        int mid = st + (end - st) / 2;
+
+        if(arr[mid] * arr[mid] > x) {
+            end = mid - 1;
+        }
+        else if(arr[mid] * arr[mid] < x) {
+            st = mid + 1;
+        }
+        else {
+            res =  mid;
+            break;
+        }
+    }
+
+    cout << res;
+
+}
+
 
 */

@@ -16,6 +16,10 @@
 14. Best Buy and sell and find max profit.
 15. Container with the most water.
 16. Product of array except itself.
+17. Palindrome or not?
+18. Power of two
+19. Fibonacci Number
+20. Tribonacci Number
 
 
 <--- Linear Search --->
@@ -28,5 +32,6 @@
 2. Search insert position
 3. Peak index in a mountain array(max elm)
 4. Single element in a sorted array --> O(Log n)
+5. sqrt(x)
 
 <--- Sorting Algorithm --->

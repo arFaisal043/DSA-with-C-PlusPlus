@@ -3,23 +3,11 @@
 #include<algorithm>
 using namespace std;
 
-bool comparator(pair<int , int>p1 , pair<int , int>p2) {
-        if(p1.second < p2.second) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
 
 int main() {
 
-    vector< pair<int , int> > vec = {{3 , 2} , {2 , 1} , {7 , 1} , {5 , 2}};
-    sort(vec.begin() , vec.end() , comparator);
-
-    for(auto val : vec) {
-        cout << val.first << " " << val.second << endl;
-    }
+    vector<int> vec = {1, 2, 3, 4, 5};
+    cout << binary_search(vec.begin() , vec.end() , 3);
 
     return 0;
 }
@@ -139,5 +127,13 @@ int main() {
     return 0;
 }
 
+Binary Search:
+int main() {
+
+    vector<int> vec = {1, 2, 3, 4, 5};
+    cout << binary_search(vec.begin() , vec.end() , 100);
+
+    return 0;
+}
 
 */

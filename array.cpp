@@ -298,4 +298,43 @@ int main() {
     return 0;
 }
 
+
+prob8: Fibonacci Number
+int fibonacci(int n) {
+    if(n == 0) return 0;
+    else if(n == 1) return 1;
+
+    int firstTerm = 0, secTerm = 1;
+    for(int i = 0; i < n; i++) {
+        int thirdTerm = firstTerm + secTerm;
+        firstTerm = secTerm;
+        secTerm = thirdTerm;
+    }
+    return firstTerm;
+}
+
+int main() {
+    int n;
+    cin >> n; // n = 4
+    cout << "Output: " << fibonacci(n);
+
+    return 0;
+}
+
+
+prob9: Tribonacci Numbers
+
+int tribonacci(int n) {
+    if(n == 0) return 0;
+    else if(n == 1 || n == 2) return 1;
+
+    int firstTerm = 0, secTerm = 1, thirdTerm = 1;
+    for(int i = 0; i < n; i++) {
+        int fourthTerm = firstTerm + secTerm + thirdTerm;
+        firstTerm = secTerm;
+        secTerm = thirdTerm;
+        thirdTerm = fourthTerm;
+    }
+    return firstTerm;
+}
 */
