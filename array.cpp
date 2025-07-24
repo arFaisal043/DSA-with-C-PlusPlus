@@ -254,7 +254,7 @@ int main() {
 
 prob6: Print 2nd largest element
 
-
+// O(nlogn):
 int main() {
     vector<int> arr = {3 , 2 , 5 , 1 , 4 , 5};
     int n = arr.size();
@@ -270,6 +270,31 @@ int main() {
     }
     return 0;
 }
+
+// O(n):
+int main() {
+    vector<int> vec = {3, 4, 6, 2, 5};
+    int max = INT_MIN;
+    int secMax = INT_MIN;
+
+    for(int i = 0; i < vec.size(); i++) {
+        if(max < vec[i]) {
+            secMax = max;
+            max = vec[i];
+        }
+        else if(secMax < vec[i]) {
+            secMax = vec[i];
+        }
+    }
+    cout << "Max = " << max << endl;
+    cout << "Second max = " << secMax;
+
+    return 0;
+}
+
+
+
+
 
 
 Prob7 : Find 2nd largest elm without sorting
@@ -337,4 +362,26 @@ int tribonacci(int n) {
     }
     return firstTerm;
 }
+
+
+prob 10: Missing Number
+int main() {
+    vector<int>arr = {3, 0, 1, 2};
+    int n = arr.size();
+    int arrSum = 0, mainSum = 0;
+
+    for(int i = 1; i <= n; i++) {
+        mainSum += i;
+    }
+
+    for(int i = 0; i < n; i++) {
+        arrSum += arr[i];
+    }
+    // cout << arrSum << " " << mainSum;
+    int ans = mainSum - arrSum;
+    cout << ans;
+
+    return 0;
+}
+
 */

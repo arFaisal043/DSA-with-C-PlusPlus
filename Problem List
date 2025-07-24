@@ -20,6 +20,10 @@
 18. Power of two
 19. Fibonacci Number
 20. Tribonacci Number
+21. Missing Number
+22. Remove element
+23. Maximum Product of two element
+24. Water bottle
 
 
 <--- Linear Search --->
@@ -35,3 +39,6 @@
 5. sqrt(x)
 
 <--- Sorting Algorithm --->
+
+<--- Sorting --->
+1. Reverse a string
