@@ -3,14 +3,7 @@
 #include<string>
 using namespace std;
 
-int main() {
-    string s = "daabcbaabcbc", part = "abc";
 
-    while(s.length() > 0 && s.find(part) < s.length()) {
-        s.erase(s.find(part), part.length());
-    }
-    cout << s;
-}
 
 
 /*
@@ -165,4 +158,29 @@ int main() {
 }
 
 
+
+prob 3: Reverse word in string:
+
+
+int main() {
+    string str = " the pen ";
+    string sentence = "";
+    reverse(str.begin(), str.end());
+
+    for(int i = 0; i < str.length(); i++) {
+        // create a word
+        string word = "";
+        while(str[i] != ' ' && i < str.length()) {
+            word += str[i];
+            i++;
+        }
+        // reverse individual word
+        reverse(word.begin(), word.end());
+        
+        if(word.length() > 0) { // word is non empty
+            sentence += " " + word;
+        }
+    }
+    cout << sentence.substr(1); // start with 1st index. that is why removing 0th index
+}
 */

@@ -24,6 +24,7 @@
 22. Remove element
 23. Maximum Product of two element
 24. Water bottle
+25. Increasing Triplet Subsequence
 
 
 <--- Linear Search --->
@@ -37,6 +38,7 @@
 3. Peak index in a mountain array(max elm)
 4. Single element in a sorted array --> O(Log n)
 5. sqrt(x)
+6. Find First and Last Position of Element in Sorted Array
 
 <--- Sorting Algorithm --->
 

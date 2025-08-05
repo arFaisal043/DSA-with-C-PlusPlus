@@ -500,10 +500,22 @@ int search(vector<int>& nums, int target) {
     }
 
 
+Prob 10: Increasing Triplet Subsequence
+bool triplate(vector<int>& arr) {
+    int first = INT_MAX;
+    int second = INT_MAX;
 
+    for(int i = 0; i < arr.size(); i++) {
+        int elm = arr[i];
 
-
-
+        if(first >= elm) first = elm;
+        else if(second >= elm) second = elm;
+        else {
+            return true;
+        }
+    }
+    return false;
+}
 
 
 

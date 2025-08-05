@@ -234,4 +234,53 @@ int main() {
 }
 
 
+
+prob 6: Find First and Last Position of Element in Sorted Array
+
+int firstOccur(vector<int> &arr) {
+    int n = arr.size(), st = 0, end = n - 1, target = 8;
+    int ans = -1;
+    while(st <= end) {
+        int mid = st + (end - st)/2;
+        if(arr[mid] == target) {
+            // st = mid + 1;
+            ans = mid;
+            end = mid - 1;
+        }
+        else if(arr[mid] > target) {
+            end = mid - 1;
+        }
+        else {
+            // return mid;
+            st = mid + 1;
+        }
+    }
+    return ans;
+}
+
+int secondOccur(vector<int> &arr) {
+    int n = arr.size(), st = 0, end = n - 1, target = 8;
+    int ans = -1;
+    while(st <= end) {
+        int mid = st + (end - st)/2;
+        if(arr[mid] == target) {
+            ans = mid;
+            st = mid + 1;
+        }
+        else if(arr[mid] > target) {
+            end = mid - 1;
+        }
+        else {
+            st = mid + 1;
+        }
+    }
+    return ans;
+}
+
+int main() {
+    vector<int> arr = {5, 7, 8, 8, 8, 10};
+    cout << firstOccur(arr) << " " << secondOccur(arr);
+}
+
+
 */
