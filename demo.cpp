@@ -1,24 +1,25 @@
 #include<iostream>
 #include<vector>
-#include<string>
+#include <algorithm>
 using namespace std;
 
-bool searchMatrix(int matrix[][5], int m, int n, int target) {
-    int r = 0, c = n - 1;
-
-    while(c >= 0 && r < m) {
-        if(target == matrix[r][c]) return true;
-        else if(target  < matrix[r][c]) c--;
-        else r++;
+int lastStoneWeight(vector<int>& stones) {
+    while (stones.size() > 1) {
+        sort(stones.begin(), stones.end(), greater<int>()); 
+        int y = stones[0]; // Heaviest stone
+        int x = stones[1]; // Second heaviest stone
+        stones.erase(stones.begin(), stones.begin() + 2); 
+        
+        if (y != x) {
+            stones.push_back(y - x); 
+        }
     }
-    return false;
+    
+    return stones.empty() ? 0 : stones[0]; 
 }
 
 int main() {
-    int matrix[5][5] = { {1,4,7,11,15},{2,5,8,12,19},{3,6,9,16,22},{10,13,14,17,24},{18,21,23,26,30} };
-    int m = 5, n = 5;
-    int target = 5;
-    cout << searchMatrix(matrix, m, n, target);
-
+    vector<int> stones = {2, 7, 4, 1, 8, 1};
+    cout << lastStoneWeight(stones) << endl;
     return 0;
 }
